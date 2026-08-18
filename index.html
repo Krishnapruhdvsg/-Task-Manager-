@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="task-panel" aria-labelledby="app-title">
+      <header class="top-section">
+        <div>
+          <p class="eyebrow">Web Development Project</p>
+          <h1 id="app-title">Task Manager</h1>
+          <p class="intro">Plan your day, set priorities, track progress, and keep your tasks saved.</p>
+        </div>
+        <div class="date-card">
+          <span id="dayName">Today</span>
+          <strong id="taskCount">0 Tasks</strong>
+        </div>
+      </header>
+
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" type="text" placeholder="Enter a new task..." autocomplete="off">
+        <select id="priorityInput" aria-label="Task priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+
+      <p id="message" class="message">Start by adding your first task.</p>
+
+      <div class="stats">
+        <div>
+          <span>Total</span>
+          <strong id="totalTasks">0</strong>
+        </div>
+        <div>
+          <span>Completed</span>
+          <strong id="completedTasks">0</strong>
+        </div>
+        <div>
+          <span>Pending</span>
+          <strong id="pendingTasks">0</strong>
+        </div>
+      </div>
+
+      <div class="progress-box">
+        <div class="progress-info">
+          <span>Daily Progress</span>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress-bar" aria-hidden="true">
+          <span id="progressFill"></span>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters" aria-label="Task filters">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="pending">Pending</button>
+          <button class="filter-btn" type="button" data-filter="completed">Completed</button>
+        </div>
+        <button id="clearCompletedBtn" class="clear-btn" type="button">Clear Completed</button>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-label="Task list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
